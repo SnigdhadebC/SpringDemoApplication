@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="foo" class="com.application.dao.CustomerDaoImpl">
+	</bean>
+	<bean name="customerDelegator" class="com.application.delegator.CustomerDelegatorImpl">
+		<property name="customerDao" ref="foo"></property>
+	</bean>
+	<bean name="customer" class="com.application.model.Customer">
+		<constructor-arg index="0" value="Buddhadeb"></constructor-arg>
+		<constructor-arg index="1" value="Chatterjee"></constructor-arg>
+		<constructor-arg index="2" value="0.12578963"></constructor-arg>
+		<constructor-arg index="3" value="California"></constructor-arg>		
+	</bean>
+	
+	<bean name="customer1" class="com.application.model.Customer">		
+	</bean>
+
+</beans>
